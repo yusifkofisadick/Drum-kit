@@ -3,8 +3,11 @@ var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for (var i = 0; i < numberOfDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function (){
     
-    
+
+        
         var buttonInnerHTML = this.innerHTML;
+
+        // how to use switch statement
 
         switch (buttonInnerHTML) {
             case "w":
@@ -31,6 +34,7 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
                 var tom3 = new Audio("sounds/tom-3.mp3");
                 tom3.play();
                 break;
+                
             case "l":
                 var tom4 = new Audio("sounds/tom-4.mp3");
                 tom4.play();
