@@ -3,13 +3,25 @@ var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for (var i = 0; i < numberOfDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function (){
     
-
-        
+    
         var buttonInnerHTML = this.innerHTML;
 
-        // how to use switch statement
+        makeSound(buttonInnerHTML);
 
-        switch (buttonInnerHTML) {
+});
+
+
+}
+
+
+
+document.addEventListener("keypress", function(event) {
+
+    makeSound(event.key);
+});
+
+function makeSound(key) {
+    switch (key) {
             case "w":
                 var crash = new Audio("sounds/crash.mp3");
                 crash.play();
@@ -34,7 +46,6 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
                 var tom3 = new Audio("sounds/tom-3.mp3");
                 tom3.play();
                 break;
-                
             case "l":
                 var tom4 = new Audio("sounds/tom-4.mp3");
                 tom4.play();
@@ -42,9 +53,4 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
         
             default: console.log(buttonInnerHTML);
         }
-
-});
-
-
 }
-
